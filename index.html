@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embrizon Technologies Internship Certificates</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .tabs {
+      margin-bottom: 30px;
+    }
+    .tab-button {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .tab-button:hover {
+      background: #1558b0;
+    }
+    .tab-button.active {
+      background: #0c47a1;
+    }
+    .certificate {
+      display: none;
+    }
+    .certificate img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      pointer-events: none;
+      user-select: none;
+    }
+    .certificate.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Internship Certificates</h1>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="showCertificate('internship', this)">Internship</button>
+    <button class="tab-button" onclick="showCertificate('training', this)">Training</button>
+    <button class="tab-button" onclick="showCertificate('project', this)">Project</button>
+  </div>
+
+  <div id="internship" class="certificate active">
+    <img src="Internship_Certificate__page-0001.jpg" alt="Internship Certificate">
+  </div>
+
+  <div id="training" class="certificate">
+    <img src="Training_Certificate__page-0001.jpg" alt="Training Certificate">
+  </div>
+
+  <div id="project" class="certificate">
+    <img src="Project_Certificate__page-0001.jpg" alt="Project Certificate">
+  </div>
+
+  <script>
+    function showCertificate(id, btn) {
+      // Hide all certificates
+      document.querySelectorAll('.certificate').forEach(cert => cert.classList.remove('active'));
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      // Show the selected certificate
+      document.getElementById(id).classList.add('active');
+      // Highlight the active button
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
